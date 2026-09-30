@@ -1,0 +1,496 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F7F8FA;
+    --bg-secondary: #FFFFFF;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #F1F3F6;
+    --border: #E2E8F0;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --accent: #6941C6;
+    --accent-hover: #53389E;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+  }
+
+  .dark {
+    --bg-primary: #0B0D10;
+    --bg-secondary: #111419;
+    --bg-surface: #171A20;
+    --bg-elevated: #1D2128;
+    --border: #292E36;
+    --text-primary: #F5F7FA;
+    --text-secondary: #A8AFBA;
+    --text-muted: #6F7782;
+    --accent: #7C5CFF;
+    --accent-hover: #9278FF;
+  }
+}
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-display {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* Custom utility bindings for clean enterprise look */
+.bg-app-primary { background-color: var(--bg-primary); }
+.bg-app-secondary { background-color: var(--bg-secondary); }
+.bg-app-surface { background-color: var(--bg-surface); }
+.bg-app-elevated { background-color: var(--bg-elevated); }
+.border-app { border-color: var(--border); }
+.border-app-border { border-color: var(--border); }
+.text-app-primary { color: var(--text-primary); }
+.text-app-secondary { color: var(--text-secondary); }
+.text-app-muted { color: var(--text-muted); }
+.text-app-text-primary { color: var(--text-primary); }
+.text-app-text-secondary { color: var(--text-secondary); }
+.text-app-text-muted { color: var(--text-muted); }
+.bg-app-accent { background-color: var(--accent); }
+.hover\:bg-app-accent-hover:hover { background-color: var(--accent-hover); }
+.text-app-accent { color: var(--accent); }
+.border-app-accent { border-color: var(--accent); }
+
+/* Smooth transitions for theme switching without flash */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *:before,
+html.theme-transitioning *:after {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-delay: 0 !important;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Slim custom scrollbar for navigator panels */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.6);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.3) transparent;
+}
+
+/* Modern Animated Gradient Border & Glows */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.05); }
+}
+
+@keyframes border-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+@keyframes spin-reverse-slow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 36s linear infinite;
+}
+
+/* Seamless Horizontal Marquee Ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+/* Shimmer Sweep Animation for Status Badges */
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-150%); }
+  50%, 100% { transform: translateX(250%); }
+}
+
+.animate-shimmer-fast {
+  animation: shimmer-sweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-shimmer-slow {
+  animation: shimmer-sweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Cyber & Neural Node Wireframe Animations */
+@keyframes cyber-pulse-node {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.jacs-cyber-node-pulse {
+  animation: cyber-pulse-node 4s ease-in-out infinite;
+}
+
+.jacs-cyber-wireframe-glow {
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.45));
+}
+
+.animate-border-gradient {
+  background-size: 200% 200%;
+  animation: border-rotate 4s ease infinite;
+}
+
+/* Interactive Spotlight Card effect */
+.interactive-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+}
+
+.dark .interactive-card:hover {
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 86, 255, 0.4), 0 0 0 1px rgba(6, 182, 212, 0.6);
+  border-color: rgba(6, 182, 212, 0.8) !important;
+}
+
+.interactive-card:hover {
+  box-shadow: 0 16px 32px -10px rgba(16, 24, 40, 0.12), 0 0 18px rgba(0, 86, 255, 0.25), 0 0 0 1px rgba(6, 182, 212, 0.4);
+  border-color: rgba(6, 182, 212, 0.7) !important;
+}
+
+/* JacS Neon Bar Navigation Styles (Default, Hover, Active) */
+.jacs-neon-bar-default {
+  border: 1px solid rgba(51, 65, 85, 0.6); /* border-slate-700/60 */
+  background-color: rgba(15, 23, 42, 0.4); /* bg-slate-900/40 */
+  color: #cbd5e1; /* text-slate-300 */
+  transition: all 0.2s ease-out;
+}
+
+.jacs-neon-bar-default svg {
+  color: #94a3b8;
+  transition: color 0.2s ease-out, filter 0.2s ease-out;
+}
+
+:root:not(.dark) .jacs-neon-bar-default {
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  background-color: rgba(248, 250, 252, 0.85);
+  color: #334155;
+}
+
+:root:not(.dark) .jacs-neon-bar-default svg {
+  color: #64748b;
+}
+
+/* Hover State: border-cyan-400/90, shadow-[0_0_16px_rgba(6,182,212,0.45)], bg-cyan-950/25, text-cyan-200 */
+.jacs-neon-bar-default:hover,
+.jacs-neon-bar-hover {
+  border-color: rgba(34, 211, 238, 0.9) !important;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.45) !important;
+  background-color: rgba(8, 51, 68, 0.25) !important;
+  color: #a5f3fc !important;
+}
+
+.jacs-neon-bar-default:hover svg,
+.jacs-neon-bar-hover svg {
+  color: #a5f3fc !important;
+  filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.6));
+}
+
+:root:not(.dark) .jacs-neon-bar-default:hover {
+  border-color: rgba(6, 182, 212, 0.85) !important;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.35) !important;
+  background-color: rgba(207, 250, 254, 0.6) !important;
+  color: #0e7490 !important;
+}
+
+:root:not(.dark) .jacs-neon-bar-default:hover svg {
+  color: #0891b2 !important;
+  filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.4));
+}
+
+/* Active State: border-2 border-cyan-400, shadow-[0_0_22px_rgba(6,182,212,0.65),inset_0_0_10px_rgba(6,182,212,0.25)], bg-cyan-950/40, text-cyan-300 font-bold */
+.jacs-neon-bar-active {
+  border: 2px solid #22d3ee !important;
+  box-shadow: 0 0 22px rgba(6, 182, 212, 0.65), inset 0 0 10px rgba(6, 182, 212, 0.25) !important;
+  background-color: rgba(8, 51, 68, 0.4) !important;
+  color: #67e8f9 !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease-out;
+}
+
+.jacs-neon-bar-active svg {
+  color: #67e8f9 !important;
+  filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.8));
+}
+
+:root:not(.dark) .jacs-neon-bar-active {
+  border: 2px solid #0891b2 !important;
+  box-shadow: 0 0 20px rgba(8, 145, 178, 0.45), inset 0 0 8px rgba(8, 145, 178, 0.15) !important;
+  background-color: rgba(207, 250, 254, 0.9) !important;
+  color: #0e7490 !important;
+  font-weight: 700 !important;
+}
+
+:root:not(.dark) .jacs-neon-bar-active svg {
+  color: #0e7490 !important;
+  filter: drop-shadow(0 0 5px rgba(8, 145, 178, 0.5));
+}
+
+/* Solid Neon Bar Container Card (7 WebApps & Berita) */
+.jacs-solid-neon-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9); /* border-slate-200/90 */
+  border-radius: var(--radius-xl, 20px);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.22s ease-out;
+}
+
+.dark .jacs-solid-neon-card {
+  background-color: rgba(17, 20, 25, 0.9); /* bg-[#111419]/90 translucent dark */
+  border: 1px solid #1e293b; /* border-slate-800 */
+}
+
+/* Hover: Border seketika mengunci ke solid neon border-2 border-cyan-400 dengan outer glow tajam shadow-[0_0_22px_rgba(6,182,212,0.55)] dan inset pendaran halus */
+.jacs-solid-neon-card:hover {
+  transform: translateY(-4px);
+  border: 2px solid #06b6d4 !important;
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.35) !important;
+}
+
+.dark .jacs-solid-neon-card:hover {
+  border: 2px solid #22d3ee !important; /* border-2 border-cyan-400 */
+  box-shadow: 0 0 22px rgba(6, 182, 212, 0.55), inset 0 0 10px rgba(6, 182, 212, 0.15) !important;
+}
+
+/* Neon CTA Button with Responsive Border Accent */
+.jacs-neon-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  background-color: #ecfeff;
+  color: #0891b2;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.dark .jacs-neon-cta-btn {
+  color: #22d3ee;
+  background-color: rgba(8, 51, 68, 0.25);
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+.jacs-solid-neon-card:hover .jacs-neon-cta-btn,
+.jacs-neon-cta-btn:hover {
+  border-color: #06b6d4 !important;
+  background-color: #06b6d4 !important; /* bg-cyan-500 */
+  color: #020617 !important; /* text-slate-950 */
+  font-weight: 700 !important; /* font-bold */
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4) !important;
+}
+
+:root:not(.dark) .jacs-solid-neon-card:hover .jacs-neon-cta-btn,
+:root:not(.dark) .jacs-neon-cta-btn:hover {
+  border-color: #06b6d4 !important;
+  background-color: #06b6d4 !important; /* bg-cyan-500 */
+  color: #020617 !important; /* text-slate-950 */
+  font-weight: 700 !important;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Hero Section Subtle Glow & Border */
+.jacs-hero-box {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jacs-hero-box:hover {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+}
+
+.dark .jacs-hero-box:hover {
+  border-color: #22d3ee !important;
+  box-shadow: 0 0 26px rgba(6, 182, 212, 0.45);
+}
+
+/* Floating Cyber List Items for Trending */
+.jacs-trending-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease-out;
+}
+
+.jacs-trending-card:hover {
+  transform: translateX(4px);
+}
+
+/* Floating Neon Carousel Arrow Controls */
+.jacs-floating-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #06b6d4;
+  color: #0891b2;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.35);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease-out,
+              color 0.25s ease-out;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.jacs-floating-arrow:hover {
+  box-shadow: 0 0 24px rgba(6, 182, 212, 0.6);
+  border-color: #0891b2;
+  color: #0e7490;
+}
+
+.dark .jacs-floating-arrow {
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 2px solid #22d3ee;
+  color: #67e8f9;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.45);
+}
+
+.dark .jacs-floating-arrow:hover {
+  border-color: #38bdf8;
+  color: #a5f3fc;
+  box-shadow: 0 0 28px rgba(6, 182, 212, 0.7);
+}
+
+/* Futuristic AI Hero Image Soft Mask Blend (Seamless cinematic blending) */
+.jacs-hero-ai-mask {
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.45) 75%, rgba(0, 0, 0, 0) 100%),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.25) 95%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.45) 75%, rgba(0, 0, 0, 0) 100%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.25) 95%, rgba(0, 0, 0, 0) 100%);
+}
+
+.dark .jacs-hero-ai-mask {
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.35) 70%, rgba(0, 0, 0, 0) 100%),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0.35) 70%, rgba(0, 0, 0, 0) 100%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Modern Tech-Forward Glassmorphism Panels */
+.jacs-glass-panel {
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.dark .jacs-glass-panel {
+  background-color: rgba(13, 17, 23, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(2, 6, 23, 0.8), 0 0 25px rgba(6, 182, 212, 0.08);
+}
+
+/* Glassmorphism Inner Glow & Hover Elevation */
+.jacs-glass-hover-glow {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jacs-glass-hover-glow:hover {
+  border-color: rgba(6, 182, 212, 0.7) !important;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.22);
+}
+
+.dark .jacs-glass-hover-glow:hover {
+  border-color: rgba(34, 211, 238, 0.75) !important;
+  box-shadow: 0 0 35px rgba(6, 182, 212, 0.3);
+}
+
+

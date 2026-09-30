@@ -1,0 +1,7 @@
+{
+  "name": "JacS Enterprise",
+  "description": "Digital Intelligence for a Better Future - Central enterprise ecosystem uniting an Application Showcase and AI & Technology Intelligence portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
