@@ -47,6 +47,7 @@ import { TrioAutomationHub } from '../components/TrioAutomationHub';
 import { useN8nConfig } from '../context/N8nConfigContext';
 import { MakeConfigModal } from '../components/MakeConfigModal';
 import { ZapierConfigModal } from '../components/ZapierConfigModal';
+import { CommunityCommentsSection } from '../components/CommunityCommentsSection';
 interface CinematicCoverConfig {
   image: string;
   alt: string;
@@ -117,6 +118,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const { openN8nConfig } = useN8nConfig();
   const [isMakeModalOpen, setIsMakeModalOpen] = useState<boolean>(false);
   const [isZapierModalOpen, setIsZapierModalOpen] = useState<boolean>(false);
+  const [slide03Tab, setSlide03Tab] = useState<'news' | 'comments'>('news');
 
   // Auto-Update & Live Data Engine: dynamic relative timestamps & auto-rotation
   const [elapsedMinutes, setElapsedMinutes] = useState<number>(0);
@@ -466,7 +468,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const slidesMeta: Array<{ id: '01' | '02' | '03'; label: string; title: string; subtitle: string }> = [
     { id: '01', label: 'Hero', title: 'Hero & Trending', subtitle: 'Pusat Inteligensi' },
     { id: '02', label: 'Solusi', title: 'App & Solusi', subtitle: `${apps.length} Ekosistem WebApps` },
-    { id: '03', label: 'Insight', title: 'Berita & Insight', subtitle: 'Intelligence Feed' },
+    { id: '03', label: 'Insight', title: 'Berita & Komunitas', subtitle: 'Feed & Diskusi Publik' },
   ];
 
   return (
@@ -1394,42 +1396,90 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div id="slide-03" className="w-full h-full max-h-full overflow-y-auto px-2 sm:px-4 lg:px-6 pr-14 sm:pr-16 flex flex-col justify-between py-1 transition-all duration-300 custom-scrollbar">
             <div className="flex flex-col justify-between h-auto py-1 space-y-3.5">
               
-              {/* Slide 3 Header + Category Filters */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-800">
+              {/* Slide 3 Header + Tab Switcher (Berita vs Diskusi Publik) */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-2 border-b border-slate-200/90 dark:border-slate-800 shrink-0">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-cyan-50 text-cyan-600 border border-slate-200 dark:bg-cyan-950/40 dark:border-cyan-500/30 dark:text-cyan-400 shadow-xs">
-                    <Radio className="w-4 h-4" strokeWidth={1.8} />
+                    {slide03Tab === 'news' ? (
+                      <Radio className="w-4 h-4" strokeWidth={1.8} />
+                    ) : (
+                      <MessageSquare className="w-4 h-4" strokeWidth={1.8} />
+                    )}
                   </div>
                   <div>
                     <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-display">
-                      Intelligence Feed & Berita Terbaru
+                      {slide03Tab === 'news'
+                        ? 'Intelligence Feed & Berita Terbaru'
+                        : '💬 Ruang Diskusi & Komentar Publik'}
                     </h2>
                     <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400">
-                      Perkembangan terkini AI, transformasi komputasi, dan riset strategis.
+                      {slide03Tab === 'news'
+                        ? 'Perkembangan terkini AI, transformasi komputasi, dan riset strategis.'
+                        : 'Forum interaktif terbuka untuk pengguna, engineer, dan mitra ekosistem JacS.'}
                     </p>
                   </div>
                 </div>
 
-                {/* Category Pills Filter */}
-                <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-1 sm:pb-0">
-                  {categories.slice(0, 5).map((cat) => (
+                {/* Right Controls: Tab Switcher & Category Filters */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {/* Mode Tabs: Berita vs Diskusi */}
+                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-xs">
                     <button
-                      key={cat}
-                      onClick={() => setNewsFilter(cat)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                        newsFilter === cat
-                          ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_12px_rgba(6,182,212,0.4)]'
-                          : 'bg-white dark:bg-[#111419]/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs'
+                      type="button"
+                      onClick={() => setSlide03Tab('news')}
+                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                        slide03Tab === 'news'
+                          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.4)]'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300'
                       }`}
                     >
-                      {cat}
+                      <Radio className="w-3.5 h-3.5" />
+                      <span>Berita & Riset</span>
                     </button>
-                  ))}
+                    <button
+                      type="button"
+                      onClick={() => setSlide03Tab('comments')}
+                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                        slide03Tab === 'comments'
+                          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.4)]'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300'
+                      }`}
+                    >
+                      <MessageSquare className="w-3.5 h-3.5" />
+                      <span>Diskusi Komunitas</span>
+                    </button>
+                  </div>
+
+                  {/* Category Pills Filter (Only visible in News Mode) */}
+                  {slide03Tab === 'news' && (
+                    <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-1 sm:pb-0">
+                      {categories.slice(0, 5).map((cat) => (
+                        <button
+                          key={cat}
+                          onClick={() => setNewsFilter(cat)}
+                          className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                            newsFilter === cat
+                              ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_12px_rgba(6,182,212,0.4)]'
+                              : 'bg-white dark:bg-[#111419]/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs'
+                          }`}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
-              {/* 4 Cards Grid with Real High-Res Photography Thumbnails */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 my-auto">
+              {/* View Switch: Comments View vs News Cards View */}
+              {slide03Tab === 'comments' ? (
+                <div className="my-auto py-1">
+                  <CommunityCommentsSection />
+                </div>
+              ) : (
+                <>
+                  {/* 4 Cards Grid with Real High-Res Photography Thumbnails */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 my-auto">
                 {filteredNews.map((art) => (
                   <div
                     key={art.id}
@@ -1567,6 +1617,32 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   </button>
                 </div>
               </div>
+
+              {/* Quick Access to Community Discussion Neon Strip */}
+              <div
+                onClick={() => setSlide03Tab('comments')}
+                className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-slate-900/90 via-slate-900/95 to-[#0c1017] border border-cyan-500/30 hover:border-cyan-400 flex items-center justify-between gap-3 shadow-md hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] cursor-pointer group transition-all"
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="p-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 group-hover:scale-105 transition-transform shrink-0">
+                    <MessageSquare className="w-4 h-4 text-cyan-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xs sm:text-[13px] font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
+                      💬 Punya Masukan atau Pertanyaan Seputar Arsitektur JacS & Otomatisasi?
+                    </div>
+                    <div className="text-[10px] sm:text-[11px] text-slate-400 truncate">
+                      Buka forum terbuka dan bagikan perspektif Anda bersama komunitas developer & enterprise.
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:text-cyan-300 shrink-0">
+                  <span>Buka Forum Diskusi</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </>
+          )}
             </div>
           </div>
         )}

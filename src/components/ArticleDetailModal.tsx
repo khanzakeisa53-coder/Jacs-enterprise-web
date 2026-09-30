@@ -14,6 +14,7 @@ import {
 import { IntelligenceArticle } from '../types';
 import { INTELLIGENCE_ARTICLES } from '../data/mockData';
 import { JacSLogo } from './JacSLogo';
+import { CommunityCommentsSection } from './CommunityCommentsSection';
 
 interface ArticleDetailModalProps {
   article: IntelligenceArticle | null;
@@ -423,6 +424,15 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 </span>
               ))}
             </div>
+          </div>
+
+          {/* Public Comments & Community Discussion Section */}
+          <div className="pt-6 border-t border-slate-200 dark:border-slate-800">
+            <CommunityCommentsSection
+              articleId={article.id}
+              articleTitle={article.title}
+              compact={false}
+            />
           </div>
 
           {/* Related Articles Section */}
