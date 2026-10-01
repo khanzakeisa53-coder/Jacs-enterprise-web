@@ -40,12 +40,15 @@ export interface WebApp {
   description: string;
   fullDescription?: string;
   liveUrl?: string;
+  externalUrl?: string;
+  appUrl?: string;
   documentationUrl?: string;
   iconName?: string;
   accentColor?: string;
   accentGradient?: string;
   features: AppFeature[];
   advantages?: string[];
+  objectives?: { title: string; desc: string }[] | string[];
   suitableFor?: string[];
   stats?: { label: string; value: string }[];
   technicalSpecifications?: AppTechnicalSpecifications;

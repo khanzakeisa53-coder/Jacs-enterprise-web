@@ -356,13 +356,13 @@ export const AppStageMicroUI: React.FC<AppStageMicroUIProps> = ({ appId }) => {
         {/* Top Header Telemetry */}
         <div className="flex items-center justify-between border-b border-sky-500/30 pb-2 relative z-10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
             <span className="text-[11px] font-bold text-white tracking-wider">
-              RADAR RUTE ARMADA GPS & DISPATCH LOGISTIK
+              DEPOHUB PRO v2.6.0 • COMMAND CENTER & POS LOGISTIK
             </span>
           </div>
-          <span className="text-[10px] px-2 py-0.5 rounded bg-sky-950/80 text-sky-300 border border-sky-500/40">
-            RADAR ACTIVE
+          <span className="text-[10px] px-2 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-500/40 font-bold">
+            BUFFER STOCK OK
           </span>
         </div>
 
@@ -434,9 +434,9 @@ export const AppStageMicroUI: React.FC<AppStageMicroUIProps> = ({ appId }) => {
         <div className="flex items-center justify-between text-[10px] text-slate-300 pt-1 border-t border-sky-500/20 relative z-10">
           <span className="text-sky-400 font-bold flex items-center gap-1">
             <Truck className="w-3.5 h-3.5 text-sky-400" />
-            FEFO Lot Tracking, WMS Slotting & Auto-Replenish RetailOS
+            Galon 19L & Dus FMCG • Kasir POS • Radar Toko • Google Sheets Sync
           </span>
-          <span className="text-slate-400">Surat Jalan Digital Terenkripsi</span>
+          <span className="text-amber-300 font-mono text-[9.5px]">3-Point Circulation Active</span>
         </div>
       </div>
     );
@@ -522,78 +522,100 @@ export const AppStageMicroUI: React.FC<AppStageMicroUIProps> = ({ appId }) => {
     );
   }
 
-  // 6. MasterPro Enterprise (Tata Kelola)
+  // 6. MasterPro App (Finansial & Order v2.5)
   if (appId === 'master-pro') {
     return (
-      <div className="w-full h-full flex flex-col justify-between gap-3 p-3.5 rounded-xl bg-slate-950/60 backdrop-blur-xl border border-violet-500/40 shadow-inner relative overflow-hidden select-none font-mono">
-        <div className="absolute -top-10 -left-10 w-36 h-36 bg-violet-500/20 rounded-full blur-2xl pointer-events-none" />
-        <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-fuchsia-500/20 rounded-full blur-2xl pointer-events-none" />
+      <div className="w-full h-full flex flex-col justify-between gap-3 p-3.5 rounded-xl bg-slate-950/60 backdrop-blur-xl border border-emerald-500/40 shadow-inner relative overflow-hidden select-none font-mono">
+        <div className="absolute -top-10 -left-10 w-36 h-36 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none" />
 
         {/* Top Header Telemetry */}
-        <div className="flex items-center justify-between border-b border-violet-500/30 pb-2 relative z-10">
+        <div className="flex items-center justify-between border-b border-emerald-500/30 pb-2 relative z-10">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-violet-400 animate-ping" />
-            <span className="text-[11px] font-bold text-white tracking-wider">
-              PAPAN KANBAN PROYEK & KEPATUHAN AUDIT ISO
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span className="text-[11px] font-bold text-white tracking-wider font-display">
+              MASTERPRO APP v2.5 • ORDER & CASH FLOW ENGINE
             </span>
           </div>
-          <span className="text-[10px] px-2 py-0.5 rounded bg-violet-950/80 text-violet-300 border border-violet-500/40">
-            OKR TRACKER 94%
+          <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 font-bold flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            CASHOUT READY ✓
           </span>
         </div>
 
-        {/* Center Grid: 3-Column Kanban Board */}
+        {/* Center Grid: 3-Column Financial Console */}
         <div className="grid grid-cols-3 gap-2 my-auto relative z-10">
-          {/* TO DO (Col 1) */}
-          <div className="bg-white/[0.05] border border-slate-700/80 rounded-lg p-2 flex flex-col justify-between shadow-sm">
-            <div className="flex items-center justify-between border-b border-slate-700/50 pb-1 text-[9px] font-bold text-amber-400">
-              <span>TO DO (3)</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+          {/* Card 1: Total Omzet */}
+          <div className="bg-white/[0.05] border border-cyan-500/40 rounded-lg p-2.5 flex flex-col justify-between shadow-sm">
+            <div className="flex items-center justify-between border-b border-cyan-500/30 pb-1 text-[9px] font-bold text-cyan-400">
+              <span>TOTAL OMZET</span>
+              <span className="px-1 py-0.2 rounded bg-cyan-500/20 text-cyan-300 text-[8px]">
+                284 Pesanan
+              </span>
             </div>
-            <div className="bg-black/50 border border-slate-700/80 rounded p-1.5 my-1 relative overflow-hidden">
-              <div className="w-1 absolute left-0 top-0 bottom-0 bg-rose-500" />
-              <div className="text-[9.5px] font-bold text-white pl-1">Audit ISO 27001</div>
-              <div className="text-[8px] text-slate-400 pl-1 mt-0.5">P1 High • Compliance</div>
+            <div className="my-1.5">
+              <div className="text-xs sm:text-sm font-extrabold text-white font-mono">
+                Rp 148.500.000
+              </div>
+              <div className="text-[8.5px] text-cyan-300/80 flex items-center gap-1 mt-0.5">
+                <span className="text-emerald-400">↑ 18.2%</span> vs bulan lalu
+              </div>
             </div>
-            <span className="text-[8px] text-slate-400 text-center">Menunggu Review</span>
+            <span className="text-[8.5px] text-cyan-400/90 font-bold bg-cyan-950/60 px-1 py-0.5 rounded text-center border border-cyan-500/30">
+              OMZET AKTIF
+            </span>
           </div>
 
-          {/* PROGRESS (Col 2) */}
-          <div className="bg-white/[0.05] border border-cyan-500/40 rounded-lg p-2 flex flex-col justify-between shadow-sm">
-            <div className="flex items-center justify-between border-b border-cyan-500/20 pb-1 text-[9px] font-bold text-cyan-400">
-              <span>PROGRESS (5)</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+          {/* Card 2: Aging Piutang Berjalan */}
+          <div className="bg-white/[0.05] border border-amber-500/40 rounded-lg p-2.5 flex flex-col justify-between shadow-sm">
+            <div className="flex items-center justify-between border-b border-amber-500/30 pb-1 text-[9px] font-bold text-amber-400">
+              <span>SISA PIUTANG</span>
+              <span className="px-1 py-0.2 rounded bg-amber-500/20 text-amber-300 text-[8px]">
+                Aging &lt;14 Hari
+              </span>
             </div>
-            <div className="bg-black/50 border border-cyan-500/40 rounded p-1.5 my-1 relative overflow-hidden">
-              <div className="w-1 absolute left-0 top-0 bottom-0 bg-cyan-400" />
-              <div className="text-[9.5px] font-bold text-cyan-200 pl-1">API Sync Enterprise</div>
-              <div className="text-[8px] text-cyan-300/80 pl-1 mt-0.5">Progress 75% • Active</div>
+            <div className="my-1.5">
+              <div className="text-xs sm:text-sm font-extrabold text-amber-300 font-mono">
+                Rp 24.200.000
+              </div>
+              <div className="text-[8.5px] text-slate-400 mt-0.5">
+                12 Invoice • WA Reminder Ready
+              </div>
             </div>
-            <span className="text-[8px] text-cyan-300 text-center font-bold">Sedang Dikerjakan</span>
+            <span className="text-[8.5px] text-amber-400/90 font-bold bg-amber-950/60 px-1 py-0.5 rounded text-center border border-amber-500/30">
+              AGING MONITORED
+            </span>
           </div>
 
-          {/* DONE (Col 3) */}
-          <div className="bg-white/[0.05] border border-emerald-500/40 rounded-lg p-2 flex flex-col justify-between shadow-sm">
-            <div className="flex items-center justify-between border-b border-emerald-500/20 pb-1 text-[9px] font-bold text-emerald-400">
-              <span>DONE (12)</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          {/* Card 3: Kas Siap Tarik */}
+          <div className="bg-white/[0.05] border border-emerald-500/40 rounded-lg p-2.5 flex flex-col justify-between shadow-sm">
+            <div className="flex items-center justify-between border-b border-emerald-500/30 pb-1 text-[9px] font-bold text-emerald-400">
+              <span>KAS SIAP TARIK</span>
+              <span className="px-1 py-0.2 rounded bg-emerald-500/20 text-emerald-300 text-[8px]">
+                Dana Cair
+              </span>
             </div>
-            <div className="bg-black/50 border border-emerald-500/40 rounded p-1.5 my-1 relative overflow-hidden">
-              <div className="w-1 absolute left-0 top-0 bottom-0 bg-emerald-500" />
-              <div className="text-[9.5px] font-bold text-emerald-200 pl-1">SPJ Q3 Keuangan</div>
-              <div className="text-[8px] text-emerald-300/80 pl-1 mt-0.5">Valid • Tervalidasi ✓</div>
+            <div className="my-1.5">
+              <div className="text-xs sm:text-sm font-extrabold text-emerald-400 font-mono">
+                Rp 124.300.000
+              </div>
+              <div className="text-[8.5px] text-emerald-300/80 mt-0.5">
+                Rekening Operasional Siap
+              </div>
             </div>
-            <span className="text-[8px] text-emerald-400 text-center font-bold">Selesai Diverifikasi</span>
+            <span className="text-[8.5px] text-emerald-300 font-bold bg-emerald-500/20 px-1 py-0.5 rounded text-center border border-emerald-400/40 shadow-xs">
+              CASHOUT READY →
+            </span>
           </div>
         </div>
 
         {/* Bottom Status Bar */}
-        <div className="flex items-center justify-between text-[10px] text-slate-300 pt-1 border-t border-violet-500/20 relative z-10">
-          <span className="text-violet-400 font-bold flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-violet-400" />
-            Alur Persetujuan Digital Cepat, Gantt Chart & Transparansi Anggaran
+        <div className="flex items-center justify-between text-[10px] text-slate-300 pt-1 border-t border-emerald-500/20 relative z-10">
+          <span className="text-emerald-400 font-bold flex items-center gap-1">
+            <Receipt className="w-3.5 h-3.5 text-emerald-400" />
+            OMZET AKTIF • AGING PIUTANG MONITORED • CASHOUT READY
           </span>
-          <span className="text-slate-400">SOP Berjenjang Valid</span>
+          <span className="text-cyan-300 font-mono text-[9.5px]">Gabung Nota & WA Reminder Active</span>
         </div>
       </div>
     );
@@ -693,46 +715,62 @@ export const AppStageMicroUI: React.FC<AppStageMicroUIProps> = ({ appId }) => {
     );
   }
 
-  // 8. JacS App PRO (Google Gems AI Shell)
+  // 8. JacS App PRO (Enterprise AI Suite v2.5)
   if (appId === 'jacs-app-pro') {
     return (
-      <div className="w-full h-full flex flex-col justify-between gap-3 p-3.5 rounded-xl bg-slate-950/60 backdrop-blur-xl border border-cyan-500/40 shadow-inner relative overflow-hidden select-none font-mono">
-        <div className="absolute -top-10 -left-10 w-36 h-36 bg-cyan-500/25 blur-2xl pointer-events-none" />
-        <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-purple-500/25 blur-2xl pointer-events-none" />
+      <div className="w-full h-full flex flex-col justify-between gap-2.5 p-3 sm:p-3.5 rounded-xl bg-slate-950/70 backdrop-blur-xl border border-cyan-500/40 shadow-inner relative overflow-hidden select-none font-mono">
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500/25 blur-2xl pointer-events-none" />
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/25 blur-2xl pointer-events-none" />
 
         {/* Top Header Telemetry */}
         <div className="flex items-center justify-between border-b border-cyan-500/30 pb-2 relative z-10">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
             <span className="text-[11px] font-bold text-white tracking-wider">
-              GOOGLE GEMS MULTI-ASSISTANT WORKSPACE
+              JACS APP PRO — ENTERPRISE AI SUITE (v2.5)
             </span>
           </div>
           <div className="flex items-center gap-1 text-[10px] font-bold text-cyan-300 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-500/40">
-            <span>2 GEMS CONNECTED ●</span>
+            <span>4-CORE AI WORKSPACE ●</span>
+          </div>
+        </div>
+
+        {/* 4 Core Module Badges Strip */}
+        <div className="grid grid-cols-4 gap-1.5 relative z-10">
+          <div className="px-2 py-1 rounded bg-orange-500/10 border border-orange-500/30 text-center">
+            <span className="text-[9.5px] font-bold text-orange-400 uppercase tracking-wide">✍️ AI Content</span>
+          </div>
+          <div className="px-2 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-center">
+            <span className="text-[9.5px] font-bold text-cyan-400 uppercase tracking-wide">🎨 AI Design</span>
+          </div>
+          <div className="px-2 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-center">
+            <span className="text-[9.5px] font-bold text-emerald-400 uppercase tracking-wide">📄 AI Document</span>
+          </div>
+          <div className="px-2 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-center">
+            <span className="text-[9.5px] font-bold text-purple-400 uppercase tracking-wide">🧠 AI Learning</span>
           </div>
         </div>
 
         {/* Center Grid: 2 Exclusive Interactive Google Gem Pill Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-auto relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 my-auto relative z-10">
           {/* Gem #1: EduCore & Kurikulum AI */}
           <a
             href="https://gemini.google.com/gem/1fipy01GNfQUDdZd-o20CfPmTh6udrCR1?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="group/gem1 bg-gradient-to-br from-cyan-950/90 via-blue-950/80 to-[#0c1a2e] hover:from-cyan-900 hover:to-blue-900 border-2 border-cyan-400/80 hover:border-cyan-300 rounded-xl p-3 flex flex-col justify-between shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_28px_rgba(6,182,212,0.65)] transition-all cursor-pointer"
+            className="group/gem1 bg-gradient-to-br from-cyan-950/90 via-blue-950/80 to-[#0c1a2e] hover:from-cyan-900 hover:to-blue-900 border-2 border-cyan-400/80 hover:border-cyan-300 rounded-xl p-2.5 sm:p-3 flex flex-col justify-between shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_28px_rgba(6,182,212,0.65)] transition-all cursor-pointer"
             title="Buka Gem #1: JacS EduCore & Kurikulum AI di tab baru"
           >
-            <div className="flex items-center justify-between mb-1.5">
+            <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-black text-cyan-300 flex items-center gap-1.5">
                 <span className="text-base">🎓</span>
                 <span>EduCore & Kurikulum AI</span>
               </span>
               <ExternalLink className="w-4 h-4 text-cyan-300 group-hover/gem1:translate-x-0.5 group-hover/gem1:-translate-y-0.5 transition-transform" />
             </div>
-            <p className="text-[10px] text-cyan-100/90 font-sans leading-relaxed mb-2">
-              Asisten pintar khusus penyusunan modul ajar, bank soalan kurikulum, dan administrasi sekolah terpadu.
+            <p className="text-[10px] text-cyan-100/90 font-sans leading-relaxed mb-1.5 line-clamp-2">
+              Asisten pintar kurikulum adaptif (CP & ATP), bank soal HOTS, dan administrasi sekolah terpadu.
             </p>
             <div className="flex items-center justify-between text-[9px] pt-1.5 border-t border-cyan-400/30 text-cyan-300 font-bold">
               <span>[ 🎓 Buka EduCore Gem ↗ ]</span>
@@ -746,18 +784,18 @@ export const AppStageMicroUI: React.FC<AppStageMicroUIProps> = ({ appId }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="group/gem2 bg-gradient-to-br from-purple-950/90 via-indigo-950/80 to-[#180a2b] hover:from-purple-900 hover:to-indigo-900 border-2 border-purple-400/80 hover:border-purple-300 rounded-xl p-3 flex flex-col justify-between shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_28px_rgba(168,85,247,0.65)] transition-all cursor-pointer"
+            className="group/gem2 bg-gradient-to-br from-purple-950/90 via-indigo-950/80 to-[#180a2b] hover:from-purple-900 hover:to-indigo-900 border-2 border-purple-400/80 hover:border-purple-300 rounded-xl p-2.5 sm:p-3 flex flex-col justify-between shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_28px_rgba(168,85,247,0.65)] transition-all cursor-pointer"
             title="Buka Gem #2: JacS Enterprise & Logic Co-Pilot di tab baru"
           >
-            <div className="flex items-center justify-between mb-1.5">
+            <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-black text-purple-300 flex items-center gap-1.5">
                 <span className="text-base">🏛️</span>
                 <span>Enterprise & Logic Co-Pilot</span>
               </span>
               <ExternalLink className="w-4 h-4 text-purple-300 group-hover/gem2:translate-x-0.5 group-hover/gem2:-translate-y-0.5 transition-transform" />
             </div>
-            <p className="text-[10px] text-purple-100/90 font-sans leading-relaxed mb-2">
-              Asisten pintar perancangan dokumen formal, SOP operasi, PRD teknis, dan struktur logik bisnis.
+            <p className="text-[10px] text-purple-100/90 font-sans leading-relaxed mb-1.5 line-clamp-2">
+              Asisten perancangan dokumen formal, SOP operasi, PRD teknis, anggaran BOS/RAB, dan logika bisnis.
             </p>
             <div className="flex items-center justify-between text-[9px] pt-1.5 border-t border-purple-400/30 text-purple-300 font-bold">
               <span>[ 🏛️ Buka Logic Co-Pilot ↗ ]</span>
@@ -766,13 +804,13 @@ export const AppStageMicroUI: React.FC<AppStageMicroUIProps> = ({ appId }) => {
           </a>
         </div>
 
-        {/* Bottom Status Bar */}
-        <div className="flex items-center justify-between text-[10px] text-slate-300 pt-1 border-t border-cyan-500/20 relative z-10">
+        {/* Bottom Status Bar with Telemetry */}
+        <div className="flex items-center justify-between text-[10px] text-slate-300 pt-1.5 border-t border-cyan-500/20 relative z-10">
           <span className="text-cyan-400 font-bold flex items-center gap-1">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            Google Gem Multimodal • Direct Bridge ke SEKOLAHKITA V2 & MasterPro
+            1,720 Tugas • 42.5h Dihemat • 99.9% Context Retention
           </span>
-          <span className="text-purple-400 font-bold">Dual Co-Pilot Active</span>
+          <span className="text-purple-400 font-bold hidden sm:inline">Direct Bridge SEKOLAHKITA V2 Active</span>
         </div>
       </div>
     );

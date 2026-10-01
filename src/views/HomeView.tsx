@@ -72,18 +72,18 @@ const APP_CINEMATIC_COVERS: Record<string, CinematicCoverConfig> = {
   },
   'depohub': {
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Armada Logistik Modern & Gudang Otomatis AI/IoT - JacS DepoHub PRO',
-    subtitle: 'Radar rute armada GPS live, ETA, dan e-POD pergudangan.',
+    alt: 'JacS DepoHub PRO — Solusi Telemetri, Kasir POS & Manajemen Distribusi Air Mineral / Logistik Depo (v2.6.0)',
+    subtitle: 'Solusi Telemetri, Kasir POS & Manajemen Distribusi Air Mineral / Logistik Depo (v2.6.0)',
   },
   'studio-suite': {
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Developer Interface & Arsitektur Diagram AI Glowing - JacS Builder Studio',
-    subtitle: 'Terminal prompt generative AI, token/s meter, dan status arsitektur.',
+    alt: 'AI Application Architecture & Blueprint Studio - JacS Builder Studio',
+    subtitle: 'AI Application Architecture & Blueprint Studio — Fondasi, Logika Modul, Skema DB & Master Prompt.',
   },
   'master-pro': {
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Tata Kelola Korporat & Enterprise Business Intelligence - MasterPro ERP',
-    subtitle: 'Kanban board interaktif, status audit ISO, dan sinkronisasi API.',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=85',
+    alt: 'MasterPro App — Enterprise Order & Cash Flow Management (v2.5)',
+    subtitle: 'Sistem Manajemen Pesanan, Piutang & Arus Kas Bisnis Terpadu (v2.5)',
   },
   'enterprise-suite': {
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=85',
@@ -92,8 +92,8 @@ const APP_CINEMATIC_COVERS: Record<string, CinematicCoverConfig> = {
   },
   'jacs-app-pro': {
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=85',
-    alt: 'Kecerdasan Buatan Multi-Agen & Google Gems Core - JacS App PRO',
-    subtitle: 'Panel Google Gems interaktif EduCore Kurikulum AI & Enterprise Logic Co-Pilot.',
+    alt: 'JacS App PRO — Enterprise AI Suite (v2.5)',
+    subtitle: 'Multi-Assistant AI Workspace & Intelligent Computing Ecosystem — AI Content, Design, Document & Learning.',
   },
 };
 
@@ -352,15 +352,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
         };
       case 'master-pro':
         return {
-          pillColor: 'bg-violet-500/15 border-violet-400/50 text-violet-700 dark:text-violet-300',
-          borderNeon: 'border-violet-400 dark:border-violet-400',
-          glowColor: 'bg-violet-400/20 dark:bg-violet-400/25',
-          barColor: 'from-violet-400 via-purple-500 to-fuchsia-500',
-          textColor: 'text-violet-600 dark:text-violet-300',
-          badgeBg: 'bg-violet-500 text-white',
-          shadowGlow: 'shadow-[0_0_24px_rgba(139,92,246,0.35)]',
-          dotActive: 'bg-violet-400 shadow-[0_0_12px_rgba(139,92,246,0.85)]',
-          role: 'TATA KELOLA',
+          pillColor: 'bg-emerald-500/15 border-emerald-400/50 text-emerald-700 dark:text-emerald-300',
+          borderNeon: 'border-emerald-400 dark:border-emerald-400',
+          glowColor: 'bg-emerald-400/20 dark:bg-emerald-400/25',
+          barColor: 'from-emerald-400 via-teal-500 to-cyan-500',
+          textColor: 'text-emerald-600 dark:text-emerald-300',
+          badgeBg: 'bg-emerald-500 text-slate-950 font-bold',
+          shadowGlow: 'shadow-[0_0_24px_rgba(16,185,129,0.35)]',
+          dotActive: 'bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.85)]',
+          role: 'FINANSIAL & ORDER • v2.5',
         };
       case 'enterprise-suite':
         return {
@@ -385,7 +385,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           badgeBg: 'bg-gradient-to-r from-cyan-500 to-purple-500 text-slate-950',
           shadowGlow: 'shadow-[0_0_24px_rgba(6,182,212,0.35)]',
           dotActive: 'bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.85)]',
-          role: 'GOOGLE GEMS AI',
+          role: 'ENTERPRISE AI SUITE',
         };
     }
   };
@@ -434,9 +434,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
         };
       case 'master-pro':
         return {
-          Icon: Users,
+          Icon: Receipt,
           badgeClass:
-            'bg-violet-50 text-violet-600 border border-slate-200 dark:bg-violet-950/40 dark:text-violet-400 dark:border-violet-500/30',
+            'bg-emerald-50 text-emerald-600 border border-slate-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-500/40',
         };
       case 'enterprise-suite':
         return {
@@ -448,13 +448,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
         return {
           Icon: Truck,
           badgeClass:
-            'bg-rose-50 text-rose-600 border border-slate-200 dark:bg-rose-950/40 dark:text-rose-400 dark:border-rose-500/30',
+            'bg-sky-50 text-sky-600 border border-slate-200 dark:bg-sky-950/40 dark:text-sky-400 dark:border-sky-500/40',
         };
       case 'jacs-app-pro':
         return {
           Icon: Cpu,
           badgeClass:
-            'bg-orange-50 text-orange-600 border border-slate-200 dark:bg-orange-950/40 dark:text-orange-400 dark:border-orange-500/30',
+            'bg-cyan-50 text-cyan-600 border border-slate-200 dark:bg-cyan-950/40 dark:text-cyan-400 dark:border-cyan-500/40',
         };
       default:
         return {
@@ -496,7 +496,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             SLIDE 01: HERO INTELLIGENCE & TRENDING CYBER BAR
             ======================================================== */}
         {activeSlide === '01' && (
-          <div id="slide-01" className="w-full h-full max-h-full overflow-hidden flex flex-col justify-between px-2 sm:px-4 lg:px-6 pr-14 sm:pr-16 py-0.5 sm:py-1 transition-all duration-300">
+          <div id="slide-01" className="w-full h-full max-h-full overflow-hidden flex flex-col justify-between px-2 sm:px-4 lg:px-6 pr-8 sm:pr-10 py-0.5 sm:py-1 transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 lg:gap-3 items-stretch flex-1 min-h-0 overflow-hidden">
               
               {/* Main Featured AI Hero Card (8 cols) - Interactive Auto-Slider / Carousel for Top 4 Insights */}
@@ -658,38 +658,60 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     </div>
                   </div>
 
-                  {/* Top Right: Carousel Navigation Arrows & Pause Status */}
-                  <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                  {/* Top Right: Centralized Carousel Navigation with Status, Indicators & Arrows */}
+                  <div className="flex items-center gap-1.5 sm:gap-2" onClick={(e) => e.stopPropagation()}>
                     {/* Auto-Slide Status Indicator */}
-                    <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 font-mono text-[10px] text-slate-600 dark:text-slate-400">
+                    <div className="hidden md:flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 font-mono text-[10px] text-slate-600 dark:text-slate-400">
                       <span className={`w-1.5 h-1.5 rounded-full ${isHeroHovered ? 'bg-amber-400' : 'bg-cyan-400 animate-pulse'}`} />
                       <span>{isHeroHovered ? 'Dijeda' : 'Auto 5s'}</span>
                     </div>
 
-                    {/* Slide Counter */}
-                    <span className="font-mono text-xs font-bold text-slate-700 dark:text-cyan-300 px-1">
-                      0{heroSlideIndex + 1} / 0{heroCarouselArticles.length}
-                    </span>
-
-                    {/* Prev / Next Arrows */}
-                    <div className="inline-flex items-center gap-0.5 bg-white/90 dark:bg-slate-900/90 rounded-full border border-slate-200/90 dark:border-cyan-500/40 p-0.5 shadow-sm">
+                    {/* Carousel Navigation Controller */}
+                    <div className="inline-flex items-center gap-1 bg-white/95 dark:bg-slate-900/95 rounded-full border border-slate-200/90 dark:border-cyan-500/40 p-0.5 shadow-sm">
                       <button
                         onClick={prevHeroSlide}
-                        className="w-7 h-7 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/20 transition-all cursor-pointer"
+                        className="w-6 h-6 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/20 transition-all cursor-pointer active:scale-95"
                         title="Insight Sebelumnya"
                         aria-label="Previous Insight"
                       >
-                        <ChevronLeft className="w-4 h-4" strokeWidth={2.2} />
+                        <ChevronLeft className="w-3.5 h-3.5" strokeWidth={2.2} />
                       </button>
+
+                      {/* Dots inside top controller */}
+                      <div className="flex items-center gap-1 px-1">
+                        {heroCarouselArticles.map((art, dotIdx) => (
+                          <button
+                            key={dotIdx}
+                            type="button"
+                            onClick={() => {
+                              setHeroSlideIndex(dotIdx);
+                              setActiveTrendingIndex(dotIdx);
+                            }}
+                            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                              dotIdx === heroSlideIndex
+                                ? 'w-5 bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]'
+                                : 'w-1.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500'
+                            }`}
+                            aria-label={`Pindah ke slide #${dotIdx + 1}: ${art.title}`}
+                            title={`#0${dotIdx + 1} ${art.title}`}
+                          />
+                        ))}
+                      </div>
+
                       <button
                         onClick={nextHeroSlide}
-                        className="w-7 h-7 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/20 transition-all cursor-pointer"
+                        className="w-6 h-6 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 hover:bg-slate-100 dark:hover:bg-cyan-500/20 transition-all cursor-pointer active:scale-95"
                         title="Insight Berikutnya"
                         aria-label="Next Insight"
                       >
-                        <ChevronRight className="w-4 h-4" strokeWidth={2.2} />
+                        <ChevronRight className="w-3.5 h-3.5" strokeWidth={2.2} />
                       </button>
                     </div>
+
+                    {/* Slide Counter */}
+                    <span className="font-mono text-xs font-bold text-slate-700 dark:text-cyan-300 px-1 tabular-nums">
+                      0{heroSlideIndex + 1}/0{heroCarouselArticles.length}
+                    </span>
                   </div>
                 </div>
 
@@ -719,7 +741,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   </div>
                 </div>
 
-                {/* Bottom Bar: Author + Dot Indicators + Action Button */}
+                {/* Bottom Bar: Author + Action Button (Cleaned up, no duplicate pagination) */}
                 <div className="relative z-10 pt-1.5 sm:pt-2 mt-0.5 border-t border-slate-200/90 dark:border-slate-800 flex items-center justify-between gap-2 shrink-0">
                   {/* Left: Author */}
                   <div className="flex items-center gap-2">
@@ -735,36 +757,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
                         {currentHeroArticle.author.role}
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Center: Dot Indicators */}
-                  <div
-                    className="hidden sm:flex items-center justify-center gap-2 px-2.5 py-1 rounded-full bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800/90 backdrop-blur-md shadow-xs select-none"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span className="font-mono text-[11px] font-bold text-cyan-700 dark:text-cyan-300 tabular-nums">
-                      0{heroSlideIndex + 1} / 0{heroCarouselArticles.length}
-                    </span>
-                    <span className="w-px h-2.5 bg-slate-300 dark:bg-slate-700" />
-                    <div className="flex items-center gap-1">
-                      {heroCarouselArticles.map((art, dotIdx) => (
-                        <button
-                          key={dotIdx}
-                          type="button"
-                          onClick={() => {
-                            setHeroSlideIndex(dotIdx);
-                            setActiveTrendingIndex(dotIdx);
-                          }}
-                          className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                            dotIdx === heroSlideIndex
-                              ? 'w-6 bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]'
-                              : 'w-1.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-500'
-                          }`}
-                          aria-label={`Pindah ke slide #${dotIdx + 1}: ${art.title}`}
-                          title={`#0${dotIdx + 1} ${art.title}`}
-                        />
-                      ))}
                     </div>
                   </div>
 
@@ -787,7 +779,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       onClick={() => onSelectArticle(currentHeroArticle)}
                       className="px-3 py-1 rounded-app-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-[11px] transition-all duration-300 shadow-[0_0_12px_rgba(6,182,212,0.35)] flex items-center justify-center gap-1 cursor-pointer active:scale-95"
                     >
-                      <span>📖 Baca</span>
+                      <span>📖 Baca Analisis</span>
                       <ArrowRight className="w-3 h-3" strokeWidth={2} />
                     </button>
                   </div>
@@ -795,8 +787,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
 
               {/* Trending Intelligence: Modern Glassmorphism Cyber List (4 cols) */}
-              <div className="lg:col-span-4 flex flex-col justify-between space-y-1 sm:space-y-1.5 mt-2 lg:mt-0 h-full min-h-0 overflow-hidden">
-                <div className="p-1 sm:p-1.5 rounded-xl bg-white/85 dark:bg-[#0d1117]/75 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700/40 flex items-center justify-between shadow-sm shrink-0">
+              <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-0 overflow-hidden">
+                <div className="p-1 sm:p-1.5 rounded-xl bg-white/85 dark:bg-[#0d1117]/85 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700/40 flex items-center justify-between shadow-sm shrink-0 mb-1 sm:mb-1.5">
                   <div className="flex items-center gap-1.5">
                     <div className="p-1 rounded-md bg-orange-50 text-orange-600 border border-slate-200 dark:bg-orange-950/40 dark:border-orange-500/30 dark:text-orange-400 shadow-xs">
                       <TrendingUp className="w-3.5 h-3.5" strokeWidth={1.8} />
@@ -814,13 +806,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   </div>
                 </div>
 
-                {/* Stacked Cards 01-03 with compact padding */}
+                {/* Stacked Cards 01-04 distributed evenly with no empty space */}
                 <div
                   className="space-y-1 sm:space-y-1.5 flex-1 min-h-0 flex flex-col justify-between overflow-hidden"
                   onMouseEnter={() => setIsTrendingHovered(true)}
                   onMouseLeave={() => setIsTrendingHovered(false)}
                 >
-                  {trendingArticles.slice(0, 3).map((article, idx) => {
+                  {trendingArticles.slice(0, 4).map((article, idx) => {
                     const isHighlighted = idx === heroSlideIndex;
                     const dynamicTime = getDynamicTrendingTimeAgo(idx + 1);
                     return (
@@ -834,7 +826,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         onMouseEnter={() => {
                           setActiveTrendingIndex(idx);
                         }}
-                        className={`jacs-trending-card py-1 px-2 rounded-lg cursor-pointer flex items-center gap-2 group transition-all duration-200 ${
+                        className={`jacs-trending-card flex-1 min-h-0 py-1 sm:py-1.5 px-2 rounded-lg cursor-pointer flex items-center gap-2 group transition-all duration-200 ${
                           isHighlighted
                             ? 'bg-gradient-to-r from-cyan-500/15 via-blue-500/10 to-white/95 dark:from-cyan-950/70 dark:via-[#0e1622]/80 dark:to-[#0d1117]/90 backdrop-blur-xl border border-cyan-400 dark:border-cyan-400 shadow-[0_0_14px_rgba(6,182,212,0.3)] translate-x-0.5 relative overflow-hidden'
                             : 'bg-white/80 dark:bg-[#0d1117]/75 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700/40 hover:border-cyan-500/60 dark:hover:border-cyan-400/60 hover:shadow-xs shadow-xs'
@@ -902,6 +894,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                               {dynamicTime}
                             </span>
                             <span>•</span>
+                            <span className="truncate">{article.category}</span>
+                            <span>•</span>
                             <span>{article.readTime}</span>
                           </div>
                         </div>
@@ -912,7 +906,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                 <button
                   onClick={() => onNavigate('intelligence')}
-                  className="w-full py-1 rounded-lg bg-cyan-50/90 hover:bg-cyan-100/90 text-cyan-800 dark:bg-[#0d1117]/75 dark:hover:bg-cyan-950/50 dark:text-cyan-300 backdrop-blur-xl border border-cyan-300 dark:border-cyan-500/40 hover:border-cyan-500 dark:hover:border-cyan-400 text-[11px] font-bold transition-all flex items-center justify-center gap-1 shadow-xs shrink-0 cursor-pointer"
+                  className="w-full mt-1 sm:mt-1.5 py-1.5 rounded-lg bg-cyan-50/90 hover:bg-cyan-100/90 text-cyan-800 dark:bg-[#0d1117]/85 dark:hover:bg-cyan-950/60 dark:text-cyan-300 backdrop-blur-xl border border-cyan-300 dark:border-cyan-500/40 hover:border-cyan-500 dark:hover:border-cyan-400 text-[11px] font-bold transition-all flex items-center justify-center gap-1 shadow-xs shrink-0 cursor-pointer"
                 >
                   <span>Lihat Semua Topik Hangat</span>
                   <ChevronRight className="w-3 h-3 text-cyan-700 dark:text-cyan-400" strokeWidth={1.8} />
@@ -1040,7 +1034,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             SLIDE 02: APP & SOLUSI JACS ENTERPRISE (Split-Screen Architecture: 7 cols vs 5 cols)
             ======================================================== */}
         {activeSlide === '02' && (
-          <div id="slide-02" className="w-full h-full max-h-full overflow-hidden flex flex-col justify-between px-2 sm:px-4 lg:px-6 pr-14 sm:pr-16 py-1 transition-all duration-300">
+          <div id="slide-02" className="w-full h-full max-h-full overflow-hidden flex flex-col justify-between px-2 sm:px-4 lg:px-6 pr-8 sm:pr-10 py-1 transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 lg:gap-4 items-stretch h-full flex-1 min-h-0 py-0.5">
               
               {/* Sisi Kiri: Showcase Stage Utama (7 cols / ~58% lebar) */}
@@ -1393,305 +1387,380 @@ export const HomeView: React.FC<HomeViewProps> = ({
             SLIDE 03: BERITA TERBARU (Real Visual Photography) & STRATEGIC INSIGHT
             ======================================================== */}
         {activeSlide === '03' && (
-          <div id="slide-03" className="w-full h-full max-h-full overflow-y-auto px-2 sm:px-4 lg:px-6 pr-14 sm:pr-16 flex flex-col justify-between py-1 transition-all duration-300 custom-scrollbar">
-            <div className="flex flex-col justify-between h-auto py-1 space-y-3.5">
-              
-              {/* Slide 3 Header + Tab Switcher (Berita vs Diskusi Publik) */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-2 border-b border-slate-200/90 dark:border-slate-800 shrink-0">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-xl bg-cyan-50 text-cyan-600 border border-slate-200 dark:bg-cyan-950/40 dark:border-cyan-500/30 dark:text-cyan-400 shadow-xs">
-                    {slide03Tab === 'news' ? (
-                      <Radio className="w-4 h-4" strokeWidth={1.8} />
-                    ) : (
-                      <MessageSquare className="w-4 h-4" strokeWidth={1.8} />
-                    )}
-                  </div>
-                  <div>
-                    <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white font-display">
-                      {slide03Tab === 'news'
-                        ? 'Intelligence Feed & Berita Terbaru'
-                        : '💬 Ruang Diskusi & Komentar Publik'}
-                    </h2>
-                    <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400">
-                      {slide03Tab === 'news'
-                        ? 'Perkembangan terkini AI, transformasi komputasi, dan riset strategis.'
-                        : 'Forum interaktif terbuka untuk pengguna, engineer, dan mitra ekosistem JacS.'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right Controls: Tab Switcher & Category Filters */}
-                <div className="flex flex-wrap items-center gap-2">
-                  {/* Mode Tabs: Berita vs Diskusi */}
-                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-xs">
-                    <button
-                      type="button"
-                      onClick={() => setSlide03Tab('news')}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                        slide03Tab === 'news'
-                          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.4)]'
-                          : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300'
-                      }`}
-                    >
-                      <Radio className="w-3.5 h-3.5" />
-                      <span>Berita & Riset</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSlide03Tab('comments')}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                        slide03Tab === 'comments'
-                          ? 'bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.4)]'
-                          : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300'
-                      }`}
-                    >
-                      <MessageSquare className="w-3.5 h-3.5" />
-                      <span>Diskusi Komunitas</span>
-                    </button>
-                  </div>
-
-                  {/* Category Pills Filter (Only visible in News Mode) */}
-                  {slide03Tab === 'news' && (
-                    <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-1 sm:pb-0">
-                      {categories.slice(0, 5).map((cat) => (
-                        <button
-                          key={cat}
-                          onClick={() => setNewsFilter(cat)}
-                          className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                            newsFilter === cat
-                              ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_12px_rgba(6,182,212,0.4)]'
-                              : 'bg-white dark:bg-[#111419]/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs'
-                          }`}
-                        >
-                          {cat}
-                        </button>
-                      ))}
-                    </div>
+          <div id="slide-03" className="w-full h-full max-h-full overflow-hidden px-2 sm:px-4 lg:px-6 pr-8 sm:pr-10 flex flex-col justify-between py-0.5 sm:py-1 transition-all duration-300 select-none">
+            {/* Slide 3 Header + Tab Switcher (Berita vs Diskusi Publik) */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-1 sm:pb-1.5 border-b border-slate-200/90 dark:border-slate-800 shrink-0">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 rounded-lg bg-cyan-50 text-cyan-600 border border-slate-200 dark:bg-cyan-950/40 dark:border-cyan-500/30 dark:text-cyan-400 shadow-xs">
+                  {slide03Tab === 'news' ? (
+                    <Radio className="w-3.5 h-3.5" strokeWidth={1.8} />
+                  ) : (
+                    <MessageSquare className="w-3.5 h-3.5" strokeWidth={1.8} />
                   )}
+                </div>
+                <div>
+                  <h2 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-display leading-tight">
+                    {slide03Tab === 'news'
+                      ? 'Intelligence Feed & Berita Terbaru'
+                      : '💬 Ruang Diskusi & Komentar Publik'}
+                  </h2>
+                  <p className="text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-400 leading-tight">
+                    {slide03Tab === 'news'
+                      ? 'Perkembangan terkini AI, transformasi komputasi, dan riset strategis.'
+                      : 'Forum interaktif terbuka untuk pengguna, engineer, dan mitra ekosistem JacS.'}
+                  </p>
                 </div>
               </div>
 
-              {/* View Switch: Comments View vs News Cards View */}
-              {slide03Tab === 'comments' ? (
-                <div className="my-auto py-1">
-                  <CommunityCommentsSection />
-                </div>
-              ) : (
-                <>
-                  {/* 4 Cards Grid with Real High-Res Photography Thumbnails */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 my-auto">
-                {filteredNews.map((art) => (
-                  <div
-                    key={art.id}
-                    onClick={() => onSelectArticle(art)}
-                    className="p-3.5 sm:p-4 cursor-pointer group jacs-solid-neon-card flex flex-col justify-between shadow-xs hover:shadow-md"
+              {/* Right Controls: Tab Switcher & Category Filters */}
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                {/* Mode Tabs: Berita vs Diskusi */}
+                <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 shadow-xs">
+                  <button
+                    type="button"
+                    onClick={() => setSlide03Tab('news')}
+                    className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                      slide03Tab === 'news'
+                        ? 'bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.4)]'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300'
+                    }`}
                   >
-                    <div>
-                      {/* Real Visual Image Thumbnail */}
-                      <div className="relative w-full h-32 sm:h-36 overflow-hidden rounded-lg mb-2.5 border border-slate-200/80 dark:border-white/10 group-hover:border-cyan-400/80 transition-colors">
-                        <img
-                          src={art.coverImage || art.imageUrl || 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80'}
-                          alt={art.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          loading="lazy"
-                        />
-                        {/* Gradient Overlay for contrast */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-85" />
+                    <Radio className="w-3 h-3" />
+                    <span>Berita & Riset</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSlide03Tab('comments')}
+                    className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                      slide03Tab === 'comments'
+                        ? 'bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(6,182,212,0.4)]'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300'
+                    }`}
+                  >
+                    <MessageSquare className="w-3 h-3" />
+                    <span>Diskusi Komunitas</span>
+                  </button>
+                </div>
 
-                        {/* Kiri Atas: Floating Glass Category Pill Badge */}
-                        <div className="absolute top-2 left-2 z-10">
-                          <span className="backdrop-blur-md bg-black/50 text-cyan-300 border border-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono">
-                            {art.category}
-                          </span>
+                {/* Category Pills Filter (Only visible in News Mode) */}
+                {slide03Tab === 'news' && (
+                  <div className="flex items-center gap-1 overflow-x-auto scrollbar-none pb-0.5 sm:pb-0">
+                    {categories.slice(0, 5).map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setNewsFilter(cat)}
+                        className={`px-2 py-0.5 rounded-lg text-[11px] font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                          newsFilter === cat
+                            ? 'bg-cyan-500 text-slate-950 font-bold shadow-[0_0_12px_rgba(6,182,212,0.4)]'
+                            : 'bg-white dark:bg-[#111419]/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/90 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* View Switch: Comments View vs News Cards View */}
+            {slide03Tab === 'comments' ? (
+              <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar my-1 p-2 rounded-xl bg-slate-900/40 border border-slate-800">
+                <CommunityCommentsSection />
+              </div>
+            ) : (
+              <>
+                {/* 2-Column Asymmetric Composite Grid (60% Left Deep Dive vs 40% Right Feed List) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 lg:gap-3 items-stretch flex-1 min-h-0 overflow-hidden my-0.5 sm:my-1">
+                  
+                  {/* Sisi Kiri: Featured Deep Dive / Spotlight Berita Utama (~60% lebar -> lg:col-span-7) */}
+                  {(() => {
+                    const spotlightArticle = filteredNews[0] || INTELLIGENCE_ARTICLES[0];
+                    return (
+                      <div
+                        onClick={() => onSelectArticle(spotlightArticle)}
+                        className="lg:col-span-7 rounded-app-xl bg-white/85 dark:bg-[#0d1117]/85 backdrop-blur-xl border border-cyan-500/40 dark:border-cyan-500/30 hover:border-cyan-400 overflow-hidden relative group flex flex-col justify-between p-3 sm:p-3.5 lg:p-4 shadow-xl dark:shadow-2xl dark:shadow-cyan-950/20 hover:shadow-[0_0_35px_rgba(6,182,212,0.22)] transition-all duration-300 cursor-pointer h-full min-h-0 select-none"
+                      >
+                        {/* High-Resolution Conceptual Image Mask on Right Half */}
+                        <div className="absolute right-0 top-0 bottom-0 w-full sm:w-3/5 lg:w-[52%] h-full overflow-hidden opacity-40 dark:opacity-30 pointer-events-none">
+                          <img
+                            src={spotlightArticle.coverImage || spotlightArticle.imageUrl || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&auto=format&fit=crop&q=80'}
+                            alt={spotlightArticle.title}
+                            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 jacs-hero-ai-mask"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-[#0d1117] dark:via-[#0d1117]/85 dark:to-transparent pointer-events-none" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-transparent to-transparent dark:from-[#0d1117]/95 dark:via-transparent dark:to-transparent pointer-events-none" />
                         </div>
 
-                        {/* Kanan Atas: Floating Read Time or Trending Badge */}
-                        <div className="absolute top-2 right-2 z-10">
-                          {art.trendingRank ? (
-                            <span className="backdrop-blur-md bg-black/50 border border-orange-500/40 text-orange-400 px-2.5 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1 font-mono">
-                              <TrendingUp className="w-3 h-3 text-orange-400" />
-                              #{art.trendingRank}
+                        {/* Ambient Radial Glow */}
+                        <div className="absolute top-2 right-6 w-64 h-64 rounded-full blur-[80px] bg-cyan-400/15 pointer-events-none animate-pulse-slow" />
+
+                        {/* Top Bar: Badges & External Link */}
+                        <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 shrink-0">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <div className="relative overflow-hidden inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[10.5px] font-bold uppercase tracking-wider backdrop-blur-md shadow-xs bg-cyan-500/15 border border-cyan-400/60 text-cyan-700 dark:text-cyan-300">
+                              <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                              </span>
+                              <span>#1 SOROTAN RISET UTAMA</span>
+                            </div>
+
+                            <span className="px-2.5 py-1 rounded-full bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10.5px] font-semibold uppercase">
+                              {spotlightArticle.category}
                             </span>
-                          ) : (
-                            <span className="backdrop-blur-md bg-black/50 border border-cyan-500/30 text-cyan-300 px-2.5 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1 font-mono">
-                              <Clock className="w-3 h-3 text-cyan-300" strokeWidth={1.8} />
-                              {art.readTime}
-                            </span>
+
+                            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 font-mono text-[10.5px]">
+                              <Clock className="w-3 h-3 text-cyan-500" strokeWidth={1.8} />
+                              <span>{spotlightArticle.readTime}</span>
+                              <span>•</span>
+                              <span>{spotlightArticle.date}</span>
+                            </div>
+                          </div>
+
+                          {spotlightArticle.externalUrl && (
+                            <a
+                              href={spotlightArticle.externalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="px-2.5 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 hover:bg-cyan-50 dark:hover:bg-slate-800 border border-cyan-400/60 dark:border-cyan-500/50 text-cyan-700 dark:text-cyan-300 font-bold text-[10.5px] transition-all flex items-center justify-center gap-1 shadow-xs hover:border-cyan-400 active:scale-95"
+                              title="Buka sumber dokumentasi resmi di tab baru"
+                            >
+                              <span>Dokumentasi</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
                           )}
                         </div>
 
-                        {/* Date Floating Overlay at Bottom Left */}
-                        <div className="absolute bottom-2 left-2.5 z-10">
-                          <span className="text-[11px] font-medium text-slate-200 backdrop-blur-md bg-black/40 border border-white/10 px-2 py-0.5 rounded-full drop-shadow-sm">
-                            {art.date}
-                          </span>
+                        {/* Middle: Headline, Summary & Tags */}
+                        <div className="relative z-10 my-auto py-1 max-w-xl md:max-w-[70%] space-y-1.5 overflow-hidden">
+                          <h1 className="font-extrabold tracking-[-0.03em] leading-tight text-base sm:text-lg lg:text-xl xl:text-2xl text-slate-900 dark:text-white font-display line-clamp-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                            {spotlightArticle.title}
+                          </h1>
+
+                          <p className="text-slate-700 dark:text-slate-200/95 text-xs sm:text-[13px] leading-snug font-normal line-clamp-3">
+                            {spotlightArticle.summary || spotlightArticle.excerpt}
+                          </p>
+
+                          {/* Tags Row */}
+                          <div className="flex flex-wrap items-center gap-1 pt-0.5">
+                            {spotlightArticle.tags.slice(0, 4).map((tag, tIdx) => (
+                              <span
+                                key={tIdx}
+                                className="text-[9.5px] sm:text-[10px] font-mono px-2 py-0.2 rounded-full bg-slate-100/90 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 text-slate-600 dark:text-slate-300"
+                              >
+                                #{tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Bottom Bar: Author & Primary CTA */}
+                        <div className="relative z-10 pt-1.5 sm:pt-2 mt-0.5 border-t border-slate-200/90 dark:border-slate-800 flex items-center justify-between gap-2 shrink-0">
+                          <div className="flex items-center gap-2">
+                            <img
+                              src={spotlightArticle.author.avatar}
+                              alt={spotlightArticle.author.name}
+                              className="w-6 h-6 sm:w-7 sm:h-7 rounded-full object-cover border border-cyan-400/60 shadow-xs"
+                            />
+                            <div className="text-xs">
+                              <div className="font-bold text-slate-900 dark:text-white leading-tight text-[11px] sm:text-xs">
+                                {spotlightArticle.author.name}
+                              </div>
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
+                                {spotlightArticle.author.role}
+                              </div>
+                            </div>
+                          </div>
+
+                          <button
+                            onClick={() => onSelectArticle(spotlightArticle)}
+                            className="px-3.5 py-1.5 rounded-app-md bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.4)] flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 group/btn"
+                          >
+                            <span>📖 Baca Analisis Lengkap</span>
+                            <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" strokeWidth={2.2} />
+                          </button>
                         </div>
                       </div>
+                    );
+                  })()}
 
-                      {/* Title & Excerpt */}
-                      <div className="flex items-start justify-between gap-1.5">
-                        <h3 className="text-xs sm:text-sm font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors line-clamp-2 leading-snug font-display flex-1">
-                          {art.title}
-                        </h3>
-                        {art.externalUrl && (
-                          <a
-                            href={art.externalUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className="p-1 rounded text-cyan-600 hover:text-cyan-500 dark:text-cyan-400 dark:hover:text-cyan-200 hover:bg-cyan-500/10 shrink-0 transition-all group/ext"
-                            title="Buka sumber resmi di tab baru"
-                          >
-                            <ExternalLink className="w-3.5 h-3.5 group-hover/ext:drop-shadow-[0_0_8px_rgba(34,211,238,0.9)]" />
-                          </a>
-                        )}
+                  {/* Sisi Kanan: Intelligence Feed List (~40% lebar -> lg:col-span-5) */}
+                  <div className="lg:col-span-5 flex flex-col justify-between gap-1.5 sm:gap-2 h-full min-h-0 overflow-hidden">
+                    {(() => {
+                      const feedArticles = (filteredNews.length > 1 ? filteredNews.slice(1, 4) : INTELLIGENCE_ARTICLES.slice(1, 4));
+                      return feedArticles.map((art, idx) => (
+                        <div
+                          key={art.id}
+                          onClick={() => onSelectArticle(art)}
+                          className="flex-1 min-h-0 p-2 sm:p-2.5 rounded-xl bg-white/80 dark:bg-[#0d1117]/80 backdrop-blur-xl border border-slate-200/90 dark:border-slate-800 hover:border-cyan-400 dark:hover:border-cyan-400 flex items-center gap-2.5 sm:gap-3 transition-all cursor-pointer group shadow-xs hover:shadow-[0_0_16px_rgba(6,182,212,0.2)]"
+                        >
+                          {/* Thumbnail with dark gradient & rank overlay */}
+                          <div className="w-20 sm:w-24 md:w-28 h-full rounded-lg overflow-hidden shrink-0 relative border border-slate-200 dark:border-slate-700/60 group-hover:border-cyan-400/80 transition-colors">
+                            <img
+                              src={art.coverImage || art.imageUrl || 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80'}
+                              alt={art.title}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                            <span className="absolute top-1 left-1 px-1.5 py-0.2 rounded-full font-mono text-[9px] font-bold bg-slate-950/80 text-cyan-300 border border-cyan-500/40">
+                              0{art.trendingRank || (idx + 2)}
+                            </span>
+                          </div>
+
+                          {/* Content column */}
+                          <div className="flex-1 min-w-0 flex flex-col justify-between h-full py-0.5">
+                            <div>
+                              <div className="flex items-center gap-1.5 text-[9px] font-mono text-slate-500 dark:text-slate-400 mb-0.5">
+                                <span className="px-1.5 py-0.2 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 font-bold uppercase">
+                                  {art.category}
+                                </span>
+                                <span>•</span>
+                                <span>{art.readTime}</span>
+                              </div>
+                              <h3 className="text-xs sm:text-[13px] font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors line-clamp-2 leading-snug font-display">
+                                {art.title}
+                              </h3>
+                            </div>
+                            <div className="flex items-center justify-between gap-1 text-[10px] text-slate-500 dark:text-slate-400 pt-1">
+                              <span className="truncate">{art.date}</span>
+                              <span className="text-cyan-600 dark:text-cyan-400 font-bold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform shrink-0">
+                                <span>Baca</span>
+                                <ArrowRight className="w-2.5 h-2.5" />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ));
+                    })()}
+                  </div>
+                </div>
+
+                {/* Unified Footer Dock: Kajian Utama (~50%) + Ruang Diskusi Publik (~50%) */}
+                <div className="mt-1 sm:mt-1.5 rounded-xl border border-cyan-500/30 bg-slate-900/80 dark:bg-[#0c1017]/90 backdrop-blur-xl py-1 px-2 sm:px-3 shadow-md shrink-0 flex-shrink-0 h-[66px] sm:h-[68px] max-h-[70px] overflow-hidden flex items-center justify-between gap-2 select-none">
+                  
+                  {/* Sisi Kiri: Kajian Utama (50%) */}
+                  <div
+                    onClick={() => onSelectArticle(analysisFeatured)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 p-1.5 rounded-lg bg-white/70 dark:bg-slate-950/80 border border-slate-200 dark:border-purple-500/30 hover:border-purple-400/60 transition-all cursor-pointer group shadow-xs h-[48px]"
+                    title="Buka Kajian Utama & Riset Strategis"
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className="p-1 rounded-md bg-purple-50 text-purple-600 border border-slate-200 dark:bg-purple-950/50 dark:text-purple-300 shrink-0">
+                        <Activity className="w-3.5 h-3.5" strokeWidth={1.8} />
                       </div>
-                      <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">
-                        {art.summary || art.excerpt}
-                      </p>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5 text-[9px] font-mono text-purple-600 dark:text-purple-300 font-bold uppercase leading-none">
+                          <span>KAJIAN UTAMA</span>
+                          <span className="w-1 h-1 rounded-full bg-purple-400" />
+                          <span className="text-slate-400 font-normal">Riset Strategis</span>
+                        </div>
+                        <div className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white group-hover:text-purple-400 transition-colors truncate leading-tight mt-0.5">
+                          {analysisFeatured.title}
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Bottom Neon CTA Button */}
-                    <div className="pt-3 mt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-                      <div className="jacs-neon-cta-btn py-1.5 px-2.5 text-xs flex-1">
-                        <span>Baca Selengkapnya</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.8} />
-                      </div>
-                      {art.externalUrl && (
+                    <div className="flex items-center gap-1 shrink-0">
+                      {analysisFeatured.externalUrl && (
                         <a
-                          href={art.externalUrl}
+                          href={analysisFeatured.externalUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="p-1.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-300 dark:border-cyan-500/40 text-cyan-600 dark:text-cyan-400 hover:text-white hover:bg-cyan-500 dark:hover:bg-cyan-500 dark:hover:text-slate-950 transition-all shadow-xs hover:shadow-[0_0_12px_rgba(6,182,212,0.5)] group/iconbtn shrink-0"
-                          title="Buka sumber resmi di tab baru"
+                          className="hidden sm:flex px-1.5 py-0.5 rounded-full text-[9px] font-mono font-bold bg-purple-500/10 hover:bg-purple-500/25 border border-purple-400/50 text-purple-600 dark:text-purple-300 hover:text-white transition-all items-center gap-1 shrink-0"
+                          title="Dokumen Resmi di Google AI Studio"
                         >
-                          <ExternalLink className="w-3.5 h-3.5 group-hover/iconbtn:drop-shadow-[0_0_6px_rgba(34,211,238,0.9)]" />
+                          <span>AI Studio</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
                         </a>
                       )}
+                      <div className="text-purple-500 dark:text-purple-400 p-0.5">
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
 
-              {/* Strategic Insight Quick Banner (Bottom of Slide 3) */}
-              <div
-                onClick={() => onSelectArticle(analysisFeatured)}
-                className="p-3 rounded-xl bg-white dark:bg-[#111419]/90 border border-slate-200/90 dark:border-cyan-500/30 hover:border-cyan-400 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-xs cursor-pointer group transition-all"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="p-1.5 rounded-lg bg-purple-50 text-purple-600 border border-slate-200 dark:bg-purple-950/40 dark:text-purple-300 shrink-0">
-                    <Activity className="w-4 h-4" strokeWidth={1.8} />
-                  </div>
-                  <div className="min-w-0">
-                    <span className="text-[10px] font-bold uppercase text-purple-600 dark:text-purple-400">
-                      Kajian Utama:
-                    </span>
-                    <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 ml-2 transition-colors truncate">
-                      {analysisFeatured.title}
-                    </span>
-                  </div>
-                </div>
+                  {/* Vertical Subtle Separator */}
+                  <div className="w-px h-8 bg-slate-300 dark:bg-slate-800 hidden sm:block shrink-0" />
 
-                <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-                  {analysisFeatured.externalUrl && (
-                    <a
-                      href={analysisFeatured.externalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="px-2.5 py-1 rounded-lg bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white dark:bg-purple-950/40 dark:hover:bg-purple-600 dark:text-purple-300 dark:hover:text-white border border-purple-200 dark:border-purple-500/30 hover:border-purple-400 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs hover:shadow-[0_0_12px_rgba(168,85,247,0.5)] cursor-pointer group/link"
-                      title="Buka Dokumen Arsitektur Cerdas (Google AI Studio)"
-                    >
-                      <span>Arsitektur Cerdas AI</span>
-                      <ExternalLink className="w-3.5 h-3.5 group-hover/link:rotate-12 transition-transform" />
-                    </a>
-                  )}
-
-                  <button
-                    onClick={() => onSelectArticle(analysisFeatured)}
-                    className="flex items-center gap-1.5 text-xs font-bold text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 cursor-pointer"
+                  {/* Sisi Kanan: Forum Diskusi Komunitas (50%) */}
+                  <div
+                    onClick={() => setSlide03Tab('comments')}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 p-1.5 rounded-lg bg-white/70 dark:bg-slate-950/80 border border-slate-200 dark:border-cyan-500/30 hover:border-cyan-400/60 transition-all cursor-pointer group shadow-xs h-[48px]"
+                    title="Buka Forum Diskusi & Masukan Komunitas"
                   >
-                    <span>Buka Analisis</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" strokeWidth={1.8} />
-                  </button>
-                </div>
-              </div>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className="p-1 rounded-md bg-cyan-50 text-cyan-600 border border-slate-200 dark:bg-cyan-950/50 dark:text-cyan-300 shrink-0">
+                        <MessageSquare className="w-3.5 h-3.5" strokeWidth={1.8} />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5 text-[9px] font-mono text-cyan-600 dark:text-cyan-300 font-bold uppercase leading-none">
+                          <span>FORUM DISKUSI</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                          <span className="text-slate-400 font-normal">Komunitas Terbuka</span>
+                        </div>
+                        <div className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white group-hover:text-cyan-300 transition-colors truncate leading-tight mt-0.5">
+                          💬 Punya Masukan atau Pertanyaan Arsitektur JacS?
+                        </div>
+                      </div>
+                    </div>
 
-              {/* Quick Access to Community Discussion Neon Strip */}
-              <div
-                onClick={() => setSlide03Tab('comments')}
-                className="p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-slate-900/90 via-slate-900/95 to-[#0c1017] border border-cyan-500/30 hover:border-cyan-400 flex items-center justify-between gap-3 shadow-md hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] cursor-pointer group transition-all"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="p-1.5 rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 group-hover:scale-105 transition-transform shrink-0">
-                    <MessageSquare className="w-4 h-4 text-cyan-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs sm:text-[13px] font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
-                      💬 Punya Masukan atau Pertanyaan Seputar Arsitektur JacS & Otomatisasi?
-                    </div>
-                    <div className="text-[10px] sm:text-[11px] text-slate-400 truncate">
-                      Buka forum terbuka dan bagikan perspektif Anda bersama komunitas developer & enterprise.
+                    <div className="flex items-center gap-1 text-[10px] font-bold text-cyan-600 dark:text-cyan-300 shrink-0">
+                      <span className="hidden sm:inline">Buka Forum</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:text-cyan-300 shrink-0">
-                  <span>Buka Forum Diskusi</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </>
-          )}
-            </div>
+              </>
+            )}
           </div>
         )}
       </div>
 
-      {/* Slide Navigation Controls: Floating Vertical Dock on Right Side */}
-      <div className="fixed right-2 sm:right-3 top-1/2 -translate-y-1/2 z-40 pointer-events-none select-none">
-        <div className="pointer-events-auto bg-slate-900/85 dark:bg-[#0c1017]/90 backdrop-blur-xl border border-cyan-500/40 rounded-full p-1.5 sm:p-2 shadow-2xl shadow-cyan-950/40 flex flex-col items-center gap-1.5 sm:gap-2 ring-1 ring-cyan-500/20">
+      {/* Slide Navigation Controls: Compact Vertical Dock on Right Side */}
+      <div className="fixed right-1 sm:right-2 top-1/2 -translate-y-1/2 z-40 pointer-events-none select-none">
+        <div className="pointer-events-auto w-8 sm:w-9 bg-slate-900/90 dark:bg-[#0c1017]/95 backdrop-blur-xl border border-cyan-500/40 rounded-full p-1 shadow-xl shadow-cyan-950/50 flex flex-col items-center gap-1 ring-1 ring-cyan-500/20">
           {/* Arrow Up: Previous Slide */}
           <button
             onClick={prevSlide}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:bg-cyan-500/15 border border-transparent hover:border-cyan-400/40 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group relative"
-            title="Slide Sebelumnya (Arrow Up)"
+            className="w-6 h-6 sm:w-7 sm:h-7 rounded-full p-1 flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:bg-cyan-500/20 border border-transparent hover:border-cyan-400/40 transition-all duration-200 cursor-pointer shadow-xs active:scale-90 group relative"
+            title="Slide Sebelumnya (↑)"
             aria-label="Slide Sebelumnya"
           >
-            <ChevronUp className="w-4 h-4" strokeWidth={2.2} />
-            {/* Floating Tooltip to the left */}
-            <span className="pointer-events-none absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-slate-950/95 text-cyan-300 text-[10.5px] font-mono border border-cyan-500/30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl z-50">
+            <ChevronUp className="w-3.5 h-3.5" strokeWidth={2.4} />
+            {/* Tooltip to the left */}
+            <span className="pointer-events-none absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded-md bg-slate-950/95 text-cyan-300 text-[10px] font-mono border border-cyan-500/40 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg z-50">
               Slide Sebelumnya (↑)
             </span>
           </button>
 
-          <div className="w-4 h-[1px] bg-slate-200 dark:bg-slate-800 my-0.5" />
+          <div className="w-3.5 h-[1px] bg-slate-700/60 dark:bg-slate-800 my-0.5" />
 
-          {/* Slide Vertical Buttons */}
-          <div className="flex flex-col items-center gap-1.5 sm:gap-2">
+          {/* Slide Vertical Buttons (Compact Numbers / Dots) */}
+          <div className="flex flex-col items-center gap-1">
             {slidesMeta.map((slide) => {
               const isActive = activeSlide === slide.id;
               return (
                 <button
                   key={slide.id}
                   onClick={() => goToSlide(slide.id)}
-                  className={`group relative px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full transition-all duration-300 cursor-pointer flex flex-col items-center gap-0.5 ${
+                  className={`group relative w-6 h-6 sm:w-7 sm:h-7 rounded-full transition-all duration-300 cursor-pointer flex items-center justify-center ${
                     isActive
-                      ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/80 shadow-[0_0_14px_rgba(6,182,212,0.6)] scale-105'
-                      : 'text-slate-400 hover:text-cyan-300 hover:bg-slate-800/80 border border-transparent'
+                      ? 'bg-cyan-500/25 text-cyan-300 border border-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.65)] ring-1 ring-cyan-400/40 scale-105'
+                      : 'text-slate-400 hover:text-cyan-300 hover:bg-slate-800/80 border border-transparent hover:border-cyan-500/30'
                   }`}
                   title={`Slide ${slide.id}: ${slide.title}`}
                   aria-label={`Slide ${slide.id}: ${slide.title}`}
                 >
-                  <span className={`font-mono text-[10px] font-bold ${isActive ? 'text-cyan-300' : 'text-slate-500 dark:text-slate-400'}`}>
+                  <span className={`font-mono text-[9px] sm:text-[10px] font-bold ${isActive ? 'text-cyan-300' : 'text-slate-500 dark:text-slate-400 group-hover:text-cyan-300'}`}>
                     {slide.id}
-                  </span>
-                  <span className="font-display text-[10px] sm:text-[11px] font-bold tracking-tight">
-                    {slide.label}
                   </span>
 
                   {/* Floating Tooltip to the left */}
-                  <span className="pointer-events-none absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-slate-950/95 text-cyan-300 text-[11px] font-sans border border-cyan-500/40 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl z-50">
+                  <span className="pointer-events-none absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-slate-950/95 text-cyan-300 text-[10.5px] font-mono border border-cyan-500/40 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl z-50">
                     <span className="font-bold text-white mr-1.5">{slide.id}</span>
                     <span>{slide.title}</span>
                   </span>
@@ -1700,18 +1769,18 @@ export const HomeView: React.FC<HomeViewProps> = ({
             })}
           </div>
 
-          <div className="w-4 h-[1px] bg-slate-200 dark:bg-slate-800 my-0.5" />
+          <div className="w-3.5 h-[1px] bg-slate-700/60 dark:bg-slate-800 my-0.5" />
 
           {/* Arrow Down: Next Slide */}
           <button
             onClick={nextSlide}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:bg-cyan-500/15 border border-transparent hover:border-cyan-400/40 transition-all duration-200 cursor-pointer shadow-xs active:scale-95 group relative"
-            title="Slide Selanjutnya (Arrow Down)"
+            className="w-6 h-6 sm:w-7 sm:h-7 rounded-full p-1 flex items-center justify-center text-slate-400 hover:text-cyan-300 hover:bg-cyan-500/20 border border-transparent hover:border-cyan-400/40 transition-all duration-200 cursor-pointer shadow-xs active:scale-90 group relative"
+            title="Slide Selanjutnya (↓)"
             aria-label="Slide Selanjutnya"
           >
-            <ChevronDown className="w-4 h-4" strokeWidth={2.2} />
-            {/* Floating Tooltip to the left */}
-            <span className="pointer-events-none absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-slate-950/95 text-cyan-300 text-[10.5px] font-mono border border-cyan-500/30 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-xl z-50">
+            <ChevronDown className="w-3.5 h-3.5" strokeWidth={2.4} />
+            {/* Tooltip to the left */}
+            <span className="pointer-events-none absolute right-full mr-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded-md bg-slate-950/95 text-cyan-300 text-[10px] font-mono border border-cyan-500/40 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg z-50">
               Slide Selanjutnya (↓)
             </span>
           </button>

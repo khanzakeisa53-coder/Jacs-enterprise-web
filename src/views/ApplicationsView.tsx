@@ -16,6 +16,7 @@ import {
   Truck,
   ExternalLink,
   Cpu,
+  Receipt,
 } from 'lucide-react';
 import { WEB_APPLICATIONS, apps } from '../data/mockData';
 import { WebApp } from '../types';
@@ -35,10 +36,10 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({ onSelectApp 
     'Retail & POS',
     'Manajemen Kos',
     'Logistik & WMS',
-    'AI & Creative Studio',
-    'Tata Kelola Bisnis',
+    'Arsitektur Sistem & AI',
+    'Finansial & Operasional Bisnis',
     'Sistem Terintegrasi',
-    'AI Multi-Assistant',
+    'Enterprise AI Suite',
   ];
 
   const getAppBadgeConfig = (id: string) => {
@@ -71,9 +72,9 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({ onSelectApp 
       case 'master-pro':
       case 'masterpro':
         return {
-          Icon: Users,
+          Icon: Receipt,
           badgeClass:
-            'bg-violet-50 text-violet-600 border border-slate-200 dark:bg-violet-950/40 dark:text-violet-400 dark:border-violet-500/30',
+            'bg-emerald-50 text-emerald-600 border border-slate-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-500/40',
         };
       case 'enterprise-suite':
         return {
@@ -85,13 +86,13 @@ export const ApplicationsView: React.FC<ApplicationsViewProps> = ({ onSelectApp 
         return {
           Icon: Truck,
           badgeClass:
-            'bg-rose-50 text-rose-600 border border-slate-200 dark:bg-rose-950/40 dark:text-rose-400 dark:border-rose-500/30',
+            'bg-sky-50 text-sky-600 border border-slate-200 dark:bg-sky-950/40 dark:text-sky-400 dark:border-sky-500/40',
         };
       case 'jacs-app-pro':
         return {
           Icon: Cpu,
           badgeClass:
-            'bg-orange-50 text-orange-600 border border-slate-200 dark:bg-orange-950/40 dark:text-orange-400 dark:border-orange-500/30',
+            'bg-cyan-50 text-cyan-600 border border-slate-200 dark:bg-cyan-950/40 dark:text-cyan-400 dark:border-cyan-500/40',
         };
       default:
         return {
